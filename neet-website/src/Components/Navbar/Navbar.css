@@ -1,0 +1,74 @@
+/* Button to open menu */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  /* Pop-up Navbar */
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -150px; /* Initially hidden */
+    height: 100vh;
+    width: 120px; /* Reduced width */
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px;
+    color: white;
+    transition: right 0.3s ease-in-out;
+  }
+  
+  .nav.show {
+    right: 0; /* Show menu */
+  }
+  
+  /* Close button */
+  .close-btn {
+    align-self: flex-end;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  /* Nav menu styles */
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 16px;
+    gap: 20px;
+    padding: 0;
+  }
+  
+  .nav-menu li {
+    text-align: right;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .nav-menu li:hover {
+    color: lightgray;
+  }
+  
+  /* Contact button */
+  .nav-contact {
+    border-radius: 50px;
+    padding: 8px 15px;
+    background: white;
+    color: #262626;
+    text-align: center;
+    cursor: pointer;
+  }
+  
