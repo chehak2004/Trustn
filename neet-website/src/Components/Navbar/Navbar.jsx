@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { MenuRounded, CloseRounded } from "@mui/icons-material";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      {/* Button to open menu */}
-      <button className="menu-btn" onClick={() => setIsOpen(true)}>
-        <MenuRounded />
-      </button>
+      {/* Menu button */}
+      <button className="menu-btn" onClick={toggleMenu}>☰</button>
+
+      {/* Overlay for closing menu when clicking outside */}
+      {isOpen && <div className="overlay" onClick={toggleMenu}></div>}
 
       {/* Pop-up Navbar */}
       <div className={`nav ${isOpen ? "show" : ""}`}>
-        {/* Close button */}
-        <button className="close-btn" onClick={() => setIsOpen(false)}>
-          <CloseRounded />
-        </button>
-
+        <button className="close-btn" onClick={toggleMenu}>✖</button>
         <ul className="nav-menu">
           <li>Home</li>
           <li>Reviews</li>
