@@ -9,9 +9,16 @@
     color: white;
     cursor: pointer;
     z-index: 1000;
+    transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
 }
 
-/* Fullscreen overlay to close the menu when clicking outside */
+/* Hide menu button when menu is open */
+.menu-btn.hidden {
+    opacity: 0;
+    pointer-events: none; /* Disable clicks */
+}
+
+/* Fullscreen overlay to close menu when clicking outside */
 .overlay {
     position: fixed;
     top: 0;
@@ -29,20 +36,20 @@
     top: 0;
     right: -120px; /* Initially hidden */
     height: 100vh;
-    width: 120px;  /* Reduced width */
+    width: 120px;
     background-color: purple;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center all items */
+    align-items: center; /* Center items */
     padding: 15px;
     color: white;
     transition: right 0.3s ease-in-out;
     z-index: 999;
 }
 
-/* Show the menu */
+/* Show menu */
 .nav.show {
-    right: 0; 
+    right: 0;
 }
 
 /* Close button */
@@ -61,14 +68,14 @@
     display: flex;
     flex-direction: column;
     list-style: none;
-    font-size: 16px; /* Slightly smaller text */
-    gap: 20px; /* Adjusted gap */
+    font-size: 16px;
+    gap: 20px;
     padding: 0;
-    align-items: center; /* Center text horizontally */
+    align-items: center; /* Center text */
 }
 
 .nav-menu li {
-    text-align: center;  /* Center text */
+    text-align: center;
     cursor: pointer;
     width: 100%;
 }
@@ -76,7 +83,7 @@
 /* Contact button */
 .nav-contact {
     border-radius: 50px;
-    padding: 8px 15px; /* Reduced button size */
+    padding: 8px 15px;
     background: #fff;
     color: #262626;
     text-align: center;

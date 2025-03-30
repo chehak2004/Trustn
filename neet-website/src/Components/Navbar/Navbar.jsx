@@ -10,10 +10,10 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Menu button */}
-      <button className="menu-btn" onClick={toggleMenu}>☰</button>
+      {/* Menu button with fade-out effect */}
+      <button className={`menu-btn ${isOpen ? "hidden" : ""}`} onClick={toggleMenu}>☰</button>
 
-      {/* Overlay for closing menu when clicking outside */}
+      {/* Overlay to close the menu when clicking outside */}
       {isOpen && <div className="overlay" onClick={toggleMenu}></div>}
 
       {/* Pop-up Navbar */}
