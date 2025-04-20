@@ -1,0 +1,143 @@
+/* Reviews Page Container */
+.reviews-container {
+    background-color: #2a0033; /* Darkest Purple */
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 50px 20px;
+}
+
+/* Vertical Line */
+.vertical-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: white;
+    transform: translateX(-50%);
+}
+
+/* Reviews Wrapper */
+.reviews-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Individual Review Box */
+.review-box {
+    background: rgba(255, 255, 255, 0.1); /* Transparent Purple */
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;  /* Fixed width for all cards */
+    height: 160px; /* Fixed height for uniformity */
+    position: relative;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ensures content is centered */
+    align-items: center;
+}
+
+/* Positioning Reviews Left and Right */
+.review-box.left {
+    align-self: flex-start;
+    margin-left: 5%;
+}
+
+.review-box.right {
+    align-self: flex-end;
+    margin-right: 5%;
+}
+
+/* Review Name */
+.review-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Star Ratings */
+.stars {
+    color: gold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+/* Review Comments */
+.review-comment {
+    font-size: 14px;
+    font-style: italic;
+    max-width: 90%;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .review-box {
+        width: 90%;  /* Adjust width for smaller screens */
+        height: auto;
+        padding: 15px;
+    }
+
+    .review-box.left,
+    .review-box.right {
+        align-self: center;
+        margin: 0;
+    }
+}
+/* Keyframes for Left & Right Slide-in Animations */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply Animations */
+.review-box {
+    opacity: 0; /* Start hidden */
+    animation-fill-mode: both;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+}
+
+/* Left reviews slide in from left */
+.review-box.left {
+    animation-name: slideInLeft;
+}
+
+/* Right reviews slide in from right */
+.review-box.right {
+    animation-name: slideInRight;
+}
+
+/* Add delay for staggered effect */
+.review-box:nth-child(1) { animation-delay: 0.2s; }
+.review-box:nth-child(2) { animation-delay: 0.4s; }
+.review-box:nth-child(3) { animation-delay: 0.6s; }
+.review-box:nth-child(4) { animation-delay: 0.8s; }
+.review-box:nth-child(5) { animation-delay: 1s; }

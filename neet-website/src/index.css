@@ -1,6 +1,31 @@
-body{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
   padding: 0;
-  font-family: Poppins;
-  
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Optional smooth scrolling for in-page navigation */
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Apply horizontal overflow hiding conditionally via a class */
+body.no-x-overflow {
+  overflow-x: hidden;
+}
+
+/* Custom utility: hide scrollbar when applied */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }

@@ -1,21 +1,23 @@
-import { useState } from 'react'
-import Background from './Components/Background/Background';
-import Navbar from './Components/Navbar/Navbar';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar/Navbar"; // import Navbar once
+import Home from "./pages/Home/Home";
+import Reviews from "./pages/Reviews/Reviews";
+import FAQs from "./pages/FAQs/FAQs";
+import ReadMore from "./pages/ReadMore/ReadMore";
 
 const App = () => {
-  let heroData = [
-    {text1:"Students celebrating after NEET results",text2:"Celebrating Success: Our students achieve top ranks in NEET"},
-    {text1:"What rank is required for admission?",text2:"Any"},
-    {text1:"International or National?",text2:"Both"},
-  ]
-  const[heroCount,setHeroCount] = useState(0);
-  const[playStatus,setPlayStatus] = useState(false);
   return (
-    <div>
-      <Background playStatus={playStatus} heroCount={heroCount} />
-      <Navbar />
-    </div>
-  )
-}
+    <Router>
+      <Navbar /> {/* This shows on all pages */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/faqs" element={<FAQs />} />
+        <Route path="/readmore" element={<ReadMore />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
+
